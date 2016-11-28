@@ -615,10 +615,11 @@ sub op_lights {
         print STDOUT "no lights defined?\n";
         &iexit(1);
     }
-    foreach (sort @lights) {
+    foreach (sort {$a <=> $b} @lights) {
         print "Lampe ";
-        printf("%-2s", "$_: ");
-        printf("%-21s",$light_ref->{$_}->{'name'});
+        printf("%2i", "$_ ");
+	print ": ";
+        printf("%-23s",$light_ref->{$_}->{'name'});
         print nf($light_ref->{$_}->{'state'}->{'on'});
         print "  Helligkeit: ";
         print bri($light_ref->{$_}->{'state'}->{'bri'});
