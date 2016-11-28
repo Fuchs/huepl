@@ -620,7 +620,7 @@ sub op_lights {
         printf("%2i", "$_ ");
 	print ": ";
         printf("%-23s",$light_ref->{$_}->{'name'});
-        print nf($light_ref->{$_}->{'state'}->{'on'});
+        print nf($light_ref->{$_}->{'state'}->{'reachable'}, $light_ref->{$_}->{'state'}->{'on'});
         print "  Helligkeit: ";
         print bri($light_ref->{$_}->{'state'}->{'bri'});
         print "Farbmodus: ";
@@ -929,7 +929,16 @@ sub op_g {
 
 # Colour formatting 
 
-sub nf { my $status = shift; return ($status eq 'true') ? "\e[32mEin \e[0m" : "\e[31mAus \e[0m"; }
+sub nf {
+	 my $reachable = shift;
+	 my $status = shift;
+	 if ($reachable eq 'true') {
+	 	return ($status eq 'true') ? "\e[32mEin \e[0m" : "\e[038;5;196mAus \e[0m";
+	 }
+	 else {
+		return  "\e[038;5;198mN/A \e[0m";
+	 }
+}
 
 sub nfg {
     my $state = shift; 
