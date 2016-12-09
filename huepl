@@ -30,6 +30,8 @@ sub iexit {
     exit($rc) unless ($exit_mode);
 }
 
+binmode( STDOUT, ':encoding(utf-8)' );
+
 $stringify_args = sub {
     my $basecom = shift;
     my $resource = shift;

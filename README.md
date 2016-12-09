@@ -6,6 +6,8 @@ Forked from http://www.floodgap.com/software/huepl/ to add some custom changes.
 These are mostly for my personal use, but maybe you find some of them,
 e.g. groups handling, helpful. 
 
+![Screenshot](/doc/huepl_scrot.png?raw=true "Screenshot")
+
 ## Usage
 
 See the inbuilt help or the original [website](http://www.floodgap.com/software/huepl/) for documentation.
