@@ -953,7 +953,7 @@ sub nfg {
         return "\e[36mEinige an  \e[0m";
     }
     else {
-        return "\e[31mAlle aus   \e[0m"; 
+        return "\e[038;5;196mAlle aus   \e[0m"; 
     }
 }
 
